@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sito gruppo xx</title>
+    <!-- <link rel="stylesheet" href="fontawesome/css/all.min.css"> https://fontawesome.com/ -->
+ 
+    <link rel="stylesheet" href="css/tooplate-wave-cafe.css">
+
+</head>
+<body>
+  <div class="tm-container">
+    <div class="tm-row">
+      <!-- Site Header -->
+      <div class="tm-left">
+        <div class="tm-left-inner">
+          <div class="tm-site-header">
+            
+            <h1 class="tm-site-name">Gruppo xx</h1>
+          </div>
+           <nav class="tm-site-nav">
+            <ul class="tm-site-nav-ul">
+              <li class="tm-page-nav-item">
+                <a href="#dettaglio" class="tm-page-link active">
+                  
+                  <span>Presentazione</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>        
+      </div>
+      <div class="tm-right">
+        <main class="tm-main">
+          <div id="dettaglio" class="tm-page-content">
+            <!--  Menu Page -->
+            <nav class="tm-black-bg tm-drinks-nav">
+              <ul>
+                <li>
+                  <a href="#" class="tm-tab-link active" data-id="Team">Team</a>
+                </li>
+                <li>
+                  <a href="#" class="tm-tab-link" data-id="Materie">Materie</a>
+                </li>
+                <li>
+                  <a href="#" class="tm-tab-link" data-id="Sport">Sport</a>
+                </li>
+              </ul>
+            </nav>
+
+            <!--  Team -->   
+            <div id="Team" class="tm-tab-content">
+              <div class="tm-list">
+                <div class="tm-list-item">          
+                  <img src="img/businessman.jpg" alt="Image" class="tm-list-item-img">
+                  <div class="tm-black-bg tm-list-item-text">
+                    <h3 class="tm-list-item-name">Cognome Nome </h3>
+                    <p class="tm-list-item-description">Alias e Ruolo nel Team</p>
+                  </div>
+                </div>
+               
+				
+              </div>
+            </div> 
+
+            <!--  elenco Materie -->   
+            <div id="Materie" class="tm-tab-content">
+              <div class="tm-list">
+                <div class="tm-list-item">          
+                  <img src="img/mathematics.jpg" alt="Image" class="tm-list-item-img">
+                  <div class="tm-black-bg tm-list-item-text">
+                    <h3 class="tm-list-item-name">Matematica </h3>
+                    <p class="tm-list-item-description">La materia preferita da tutto il Team</p>              
+                  </div>
+                </div>
+               
+               </div>
+            </div>
+
+            <!--  Sport --> 
+            <div id="Sport" class="tm-tab-content">
+              <div class="tm-list">
+                <div class="tm-list-item">          
+                  <img src="img/tennis.jpg" alt="Image" class="tm-list-item-img">
+                  <div class="tm-black-bg tm-list-item-text">
+                    <h3 class="tm-list-item-name">Tennis </h3>
+                    <p class="tm-list-item-description">Siamo tutti fan di Sinner e convertiti al tennis</p>              
+                  </div>
+                </div>
+              
+
+              </div>   
+            </div>
+            
+            
+          
+            <!-- end Menu Page -->
+          </div>
+
+          <!-- About Us Page -->
+          <div id="about" class="tm-page-content">
+          </div>
+          <!-- end Contact Page -->
+        </main>
+      </div>    
+    </div>
+    
+  </div>
+    
+
+  <script src="js/jquery-3.4.1.min.js"></script>    
+  <script>
+
+    function setVideoSize() {
+      const vidWidth = 1920;
+      const vidHeight = 1080;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const tempVidWidth = windowHeight * vidWidth / vidHeight;
+      const tempVidHeight = windowWidth * vidHeight / vidWidth;
+      const newVidWidth = tempVidWidth > windowWidth ? tempVidWidth : windowWidth;
+      const newVidHeight = tempVidHeight > windowHeight ? tempVidHeight : windowHeight;
+   
+    }
+
+    function openTab(evt, id) {
+      $('.tm-tab-content').hide();
+      $('#' + id).show();
+      $('.tm-tab-link').removeClass('active');
+      $(evt.currentTarget).addClass('active');
+    }    
+
+    function initPage() {
+      let pageId = location.hash;
+
+      if(pageId) {
+        highlightMenu($(`.tm-page-link[href^="${pageId}"]`)); 
+        showPage($(pageId));
+      }
+      else {
+        pageId = $('.tm-page-link.active').attr('href');
+        showPage($(pageId));
+      }
+    }
+
+    function highlightMenu(menuItem) {
+      $('.tm-page-link').removeClass('active');
+      menuItem.addClass('active');
+    }
+
+    function showPage(page) {
+      $('.tm-page-content').hide();
+      page.show();
+    }
+
+    $(document).ready(function(){
+
+      /***************** Pages *****************/
+
+      initPage();
+
+      $('.tm-page-link').click(function(event) {
+        
+        if(window.innerWidth > 991) {
+          event.preventDefault();
+        }
+
+        highlightMenu($(event.currentTarget));
+        showPage($(event.currentTarget.hash));
+      });
+
+      
+      /***************** Tabs *******************/
+
+      $('.tm-tab-link').on('click', e => {
+        e.preventDefault(); 
+        openTab(e, $(e.target).data('id'));
+      });
+
+      $('.tm-tab-link.active').click(); // Open default tab
+
+    });
+      
+  </script>
+</body>
+</html>
