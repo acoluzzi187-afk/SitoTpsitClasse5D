@@ -16,14 +16,12 @@
       <div class="tm-left">
         <div class="tm-left-inner">
           <div class="tm-site-header">
-            
             <h1 class="tm-site-name">Gruppo xx</h1>
           </div>
            <nav class="tm-site-nav">
             <ul class="tm-site-nav-ul">
               <li class="tm-page-nav-item">
                 <a href="#dettaglio" class="tm-page-link active">
-                  
                   <span>Presentazione</span>
                 </a>
               </li>
@@ -58,9 +56,7 @@
                     <h3 class="tm-list-item-name">Cognome Nome </h3>
                     <p class="tm-list-item-description">Alias e Ruolo nel Team</p>
                   </div>
-                </div>
-               
-				
+                </div>            
               </div>
             </div> 
 
@@ -73,14 +69,14 @@
                     <h3 class="tm-list-item-name">Matematica </h3>
                     <p class="tm-list-item-description">La materia preferita da tutto il Team</p>              
                   </div>
-                </div>
-               
+                </div>              
                </div>
             </div>
 
             <!--  Sport --> 
             <div id="Sport" class="tm-tab-content">
               <div class="tm-list">
+                <!-- Tennis -->
                 <div class="tm-list-item">          
                   <img src="img/tennis.jpg" alt="Image" class="tm-list-item-img">
                   <div class="tm-black-bg tm-list-item-text">
@@ -88,14 +84,25 @@
                     <p class="tm-list-item-description">Siamo tutti fan di Sinner e convertiti al tennis</p>              
                   </div>
                 </div>
-              
-
+                <!-- Basket -->
+                <div class="tm-list-item">          
+                  <img src="img/basketball.jpg" alt="Image" class="tm-list-item-img">
+                  <div class="tm-black-bg tm-list-item-text">
+                    <h3 class="tm-list-item-name">Basket </h3>
+                    <p class="tm-list-item-description">Amanti delle schiacciate e dei grandi campioni NBA</p>              
+                  </div>
+                </div>
+                <!-- Nuoto -->
+                <div class="tm-list-item">          
+                  <img src="img/swimming.jpg" alt="Image" class="tm-list-item-img">
+                  <div class="tm-black-bg tm-list-item-text">
+                    <h3 class="tm-list-item-name">Nuoto </h3>
+                    <p class="tm-list-item-description">Allenamenti in piscina e gare di stile libero</p>              
+                  </div>
+                </div>
               </div>   
             </div>
             
-            
-          
-            <!-- end Menu Page -->
           </div>
 
           <!-- About Us Page -->
@@ -105,7 +112,6 @@
         </main>
       </div>    
     </div>
-    
   </div>
     
 
@@ -121,7 +127,6 @@
       const tempVidHeight = windowWidth * vidHeight / vidWidth;
       const newVidWidth = tempVidWidth > windowWidth ? tempVidWidth : windowWidth;
       const newVidHeight = tempVidHeight > windowHeight ? tempVidHeight : windowHeight;
-   
     }
 
     function openTab(evt, id) {
@@ -155,23 +160,15 @@
     }
 
     $(document).ready(function(){
-
-      /***************** Pages *****************/
-
       initPage();
 
       $('.tm-page-link').click(function(event) {
-        
         if(window.innerWidth > 991) {
           event.preventDefault();
         }
-
         highlightMenu($(event.currentTarget));
         showPage($(event.currentTarget.hash));
       });
-
-      
-      /***************** Tabs *******************/
 
       $('.tm-tab-link').on('click', e => {
         e.preventDefault(); 
@@ -179,7 +176,6 @@
       });
 
       $('.tm-tab-link.active').click(); // Open default tab
-
     });
       
   </script>
