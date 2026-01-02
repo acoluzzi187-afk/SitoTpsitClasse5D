@@ -1,5 +1,5 @@
 # gruppoWeb
-progetto di gruppo A-B-C
+progetto di Alessio Cooluzzi(PM-sviluppatore)
 ogni sviluppatore deve aggiungere voci nel proprio menu’:
--sviluppatore a: assegnato al menu’ team, materie e sport
+-sviluppatore Alessio Coluzzi: assegnato al menu’ team, materie e sport
 
